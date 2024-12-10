@@ -27,7 +27,7 @@ export const hospedagens = [
         tipo_hos: 'quarto',
         nota_hos: 4.7,
         id_anfitriao: 1,
-        cidade_hos: 'Buizios',
+        cidade_hos: 'Buzios',
         uf_hos: 'RJ',
         thumb_hos: 'https://viagempronta.com/img/admin/uploads/foto-hotel_17_20221208160246_2284.jpg'
     },

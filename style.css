@@ -63,3 +63,50 @@ header a {
     display: flex;
     justify-content: center;
 }
+
+.bi-search {
+    cursor: pointer;
+    font-size: 20px;
+}
+.formulario_signin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.formulario_signin input {
+    width: 350px;
+    height: 20px;
+    border: 2px black solid;
+}
+.formulario_signup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.formulario_signup input {
+    width: 350px;
+    height: 20px;
+    border: 2px black solid
+}
+.botao_signin {
+    background-color: black;
+    color: #ededed;
+    border: 0px;
+    height: 45px;
+    width: 80px;
+    border-radius: 60px;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.botao_signup {
+    background-color: black;
+    color: #ededed;
+    border: 0px;
+    height: 45px;
+    width: 80px;
+    border-radius: 60px;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

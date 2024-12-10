@@ -20,13 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
 // Ao clicar no icone de lupa, de busca, de search
 iconSearch.addEventListener('click', () => {
     const query = inputQuery.value;
-    
-    /*
-       - você deve construir um filtro verificando se a query é igual a cidade_hos.
-        - Após construir o filtro, você deve invocar/chamar a função, createHospedagens
-        e enviar o filtro e a div para ela.
-
-    */
+    const hospedagens_search = hospedagens.filter((element) => element.cidade_hos === query)
+    createHospedagens(hospedagens_search, divResultados)
 });
 
 
