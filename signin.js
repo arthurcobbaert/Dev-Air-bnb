@@ -3,17 +3,22 @@ const botao = document.getElementById("botao_signin")
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 
-
-
 let data = {
     email: "",
     password: ""
-}
+};
 
-signin.addEventListener("input", ({target}) => {
+window.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('usuarios')) { // Senão exister usuarios no localStorage
+        localStorage.setItem('usuarios', JSON.stringify([]))
+    };
+})
+
+
+signin.addEventListener("input", ({ target }) => {
     const name = target.name
     const value = target.value
-    console.log(name,value)
+    console.log(name, value)
     data = {
         ...data,
         [name]: value
@@ -21,15 +26,19 @@ signin.addEventListener("input", ({target}) => {
 })
 
 signin.addEventListener('submit', (event) => {
-    event.preventDefault()
-    const usuario = JSON.parse(localStorage.getItem('usuario'))
-    console.log(usuario.email, usuario.senha)
-    console.log(data.email, data.password)
-    if (data.email === usuario.email && data.password === usuario.senha) {
+    event.preventDefault();
+
+    const usuarios = JSON.parse(localStorage.getItem('usuarios'));
+
+    // Verificação pelo FIND
+    const findUser = usuarios.find(element =>
+        data.email === element.email && data.password === element.senha);
+
+    if (findUser) {
         window.location.href = "index.html"
     } else {
         alert('usuario nao encontrado')
         email.value = ""
         password.value = ""
-    }     
+    }
 })
