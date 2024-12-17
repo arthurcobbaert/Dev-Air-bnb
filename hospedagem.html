@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <title></title>
 </head>
+
 <body>
 
     <header>
@@ -15,12 +16,7 @@
             <h1 class="title" id="query-titulo">Devbnb</h1>
         </div>
         <div>
-            <input 
-                class="nav-bar" 
-                type="text" 
-                id="input-query" 
-                placeholder="ex: Rio de Janeiro"
-            > 
+            <input class="nav-bar" type="text" id="input-query" placeholder="ex: Rio de Janeiro">
             <i class="bi bi-search" id="icon-search"></i>
         </div>
         <div>
@@ -30,25 +26,26 @@
         </div>
     </header>
 
-<main>
+    <main>
 
-    <div id="container">
-        <div id="hospedagem" class="cards">
-            
-
-
+        <div id="div-container" class="div-container">
+            <div class="div-flex-colum">
+                <div class="div-flex">
+                    <div id="image"></div>
+                    <div id="images"></div>
+                </div>
+                <div id="hospedagem"></div>
+            </div>
         </div>
 
 
-    </div>
-    
 
-    
 
-</main>
+    </main>
 
 
 
-<script type="module" src="hospedagem.js"></script>
+    <script type="module" src="hospedagem.js"></script>
 </body>
+
 </html>
