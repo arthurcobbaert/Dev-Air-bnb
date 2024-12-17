@@ -10,6 +10,7 @@ export function createHospedagens(baseDados, div) {
             <h2>${element.name_hos}</h2>
             <p>${element.cidade_hos}, ${element.uf_hos}</p>
             <p>Avaliação: ${element.nota_hos}</p>
+            <a href="hospedagem.html?nome=${element.name_hos}">Clique aqui</a>
            </div>
         `
     });
