@@ -1,0 +1,40 @@
+.div-container {
+    background-color: #ededed;
+    display: flex;
+    justify-content: center;
+}
+
+.div-content {
+    width: 80%;
+    margin-top: 60px;
+}
+
+.div-grid-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.img1 {
+    width: 600px;
+    border-radius: 10px;
+}
+
+.img2 {
+    width: 200px;
+    border-radius: 10px;
+}

@@ -1,3 +1,5 @@
+import { getLocalStorageUsuarios } from "../scripts/getLocalStorageUsuarios.js";
+
 const signup = document.getElementById("signup");
 const email = document.getElementById("email")
 const senha = document.getElementById("senha")
@@ -10,12 +12,7 @@ let data = {
     telefone: ''
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-    // Verificar se existe alguma base de dados no localStorage
-    if (!localStorage.getItem('usuarios')) { // Senão exister usuarios no localStorage
-        localStorage.setItem('usuarios', JSON.stringify([]))
-    }
-});
+window.addEventListener('DOMContentLoaded', () => getLocalStorageUsuarios());
 
 signup.addEventListener('input', ({target}) => {
     const name = target.name;
@@ -52,5 +49,5 @@ signup.addEventListener('submit', (event) => {
     lsUsuarios.push(data); // Colocando data dentro do localStorage
 
     localStorage.setItem('usuarios', JSON.stringify(lsUsuarios)) // Enviar de volta para o LocalStorage
-        window.location.href = "index.html"
+        window.location.href = "../../index.html"
 });

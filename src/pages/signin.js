@@ -1,19 +1,19 @@
+import { getLocalStorageUsuarios } from "../scripts/getLocalStorageUsuarios.js"
+
+// Seletores
 const signin = document.getElementById("signin")
 const botao = document.getElementById("botao_signin")
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 
+// Variaveis
 let data = {
     email: "",
     password: ""
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-    if (!localStorage.getItem('usuarios')) { // Senão exister usuarios no localStorage
-        localStorage.setItem('usuarios', JSON.stringify([]))
-    };
-})
-
+// Eventos
+window.addEventListener('DOMContentLoaded', () => getLocalStorageUsuarios())
 
 signin.addEventListener("input", ({ target }) => {
     const name = target.name
@@ -35,7 +35,7 @@ signin.addEventListener('submit', (event) => {
         data.email === element.email && data.password === element.senha);
 
     if (findUser) {
-        window.location.href = "index.html"
+        window.location.href = "../../index.html"
     } else {
         alert('usuario nao encontrado')
         email.value = ""

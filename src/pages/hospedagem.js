@@ -1,5 +1,6 @@
-import { hospedagens } from "./src/data/hospedagens.js";
-import { images } from "./src/data/images.js";
+import { hospedagens } from "../data/hospedagens.js";
+import { images } from "../data/images.js";
+
 
 const divHospedagem = document.getElementById("hospedagem")
 const divImage = document.getElementById("image")
@@ -21,15 +22,13 @@ divImage.innerHTML += `
 
 images.forEach(element => {
     divImages.innerHTML += `
-        <img class="img2" src="${element}" alt=""> 
+        <img class="img2" src="${element}" alt="imagem"> 
     `
 });
 
 divHospedagem.innerHTML += `
     <div>
         <h2>${findHospedagem.name_hos}</h2>
-
-
     </div>
 `
 

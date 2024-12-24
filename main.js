@@ -1,6 +1,7 @@
 // Importações
 import { hospedagens } from "./src/data/hospedagens.js";
 import { createHospedagens } from "./src/scripts/createHospedagens.js";
+import { filterByType } from "./src/scripts/filterByType.js";
 
 // Seletores
 const divResultados = document.getElementById('query-resultados') /** Essa variavel armazena todos os cards presentes no site, nao contendo nenhum filtro */
@@ -11,39 +12,25 @@ const btnTitulo = document.getElementById('query-titulo') /** "btnTitulo" se ref
 const iconSearch = document.getElementById('icon-search');
 const inputQuery = document.getElementById('input-query');
 
-
 // Quando a página é carregada:
 window.addEventListener('DOMContentLoaded', () => {
     createHospedagens(hospedagens, divResultados)
-})
+});
 
 // Ao clicar no icone de lupa, de busca, de search
 iconSearch.addEventListener('click', () => {
     const query = inputQuery.value;
-    const hospedagens_search = hospedagens.filter((element) => element.cidade_hos === query)
-    createHospedagens(hospedagens_search, divResultados)
+    filterByType(hospedagens, query, divResultados);
 });
 
-
 // Ao clicar no botão Casa
-btnCasa.addEventListener('click', () => { /** Este é um evento que ao apertar no "btnCasa", havera alguma atualizacao */
-    const hospedagens_casa = hospedagens.filter((element) => element.tipo_hos === "casa") /** A variavel "hospedagens_casa", filtra os elementos para obter apenas aqueles que sao do tipo "casa" */
-    createHospedagens(hospedagens_casa, divResultados)
-})
+btnCasa.addEventListener('click', () => filterByType(hospedagens, 'casa', divResultados));
 
 // Ao clicar no botão Apartamento
-btnApartamento.addEventListener('click', () => { /** Este é um evento que ao apertar no "btnApartamento", havera alguma atualizacao */
-    const hospedagens_apartamento = hospedagens.filter((element) => element.tipo_hos === "apartamento") /** A variavel "hospedagens_apartamento", filtra os elementos para obter apenas aqueles que sao do tipo "apartamento" */
-    createHospedagens(hospedagens_apartamento, divResultados)
-})
+btnApartamento.addEventListener('click', () => filterByType(hospedagens, 'apartamento', divResultados));
 
 // Ao clicar no botão Quarto
-btnQuarto.addEventListener('click', () => { /** Este é um evento que ao apertar no "btnQuarto", havera alguma atualizacao */
-    const hospedagens_quarto = hospedagens.filter((element) => element.tipo_hos === "quarto") /** A variavel "hospedagens_apartamento", filtra os elementos para obter apenas aqueles que sao do tipo "quarto" */
-    createHospedagens(hospedagens_quarto, divResultados)
-})
+btnQuarto.addEventListener('click', () => filterByType(hospedagens, 'quarto', divResultados));
 
 // Ao clicar no botão da logo
-btnTitulo.addEventListener('click', () => { /** Este é um evento que ao apertar no "btnQuarto", havera alguma atualizacao */
-    createHospedagens(hospedagens, divResultados)
-})
+btnTitulo.addEventListener('click', () => createHospedagens(hospedagens, divResultados));

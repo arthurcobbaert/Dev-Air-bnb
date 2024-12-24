@@ -110,29 +110,3 @@ header a {
     font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
-
-.div-container {
-    display: flex;
-    background-color: red;
-    height: 10000px;
-    justify-content: center;
-}
-
-.div-flex-colum {
-    width: 80%;
-}
-
-.div-flex {
-    display: flex;
-}
-
-.img1 {
-    width: 400px;
-    border-radius: 10px;
-}
-
-.img2 {
-    width: 200px;
-    border-radius: 10px;
-}
